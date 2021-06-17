@@ -1,6 +1,10 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import handler from "@/utils/APIHandler";
+const END_POINT = "/api/hello";
 
-export default (req, res) => {
-  res.statusCode = 200
-  res.json({ name: 'John Doe' })
-}
+handler.get(END_POINT, async (req, res) => {
+  res.json({
+    data: "Hello Chief!",
+  });
+});
+
+export default handler;
